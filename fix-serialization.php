@@ -103,8 +103,8 @@ try {
   // Data OK
 
   // Replace serialized string values
-  $data = preg_replace_callback('/s:(\d+):([\\\\]"[\\\\]"|[\\\\]"((.*?)[^\\\\])[\\\\]");(?=($|[}]|[a-z]:[-]?\d+|[\'][)]))/sm', "cb1_mysql", $data);
-  $data = preg_replace_callback('/s:(\d+):(""|"(.*?)");(?=($|[}]|[a-z]:[-]?\d+))/sm', "cb2_plain", $data);
+  $data = preg_replace_callback('/s:(\d+):([\\\\]"[\\\\]"|[\\\\]"(.*?[^\\\\])[\\\\]");(?=($|[}]|N;|[a-z]:[-]?\d+|[\'][)]))/sm', "cb1_mysql", $data);
+  $data = preg_replace_callback('/s:(\d+):(""|"(.*?)");(?=($|[}]|N;|[a-z]:[-]?\d+))/sm', "cb2_plain", $data);
 
   // Close file
   fclose($fp);
